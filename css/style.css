@@ -54,12 +54,13 @@ input#to-do {
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 button[type="submit"] {
-  border-radius: 25px;
+  border-radius: 5px;
   border: none;
   height: 2rem;
   padding: 5px 15px;
   cursor: pointer;
-  background-color: #38e4ae;
+  background-color: rgb(50, 144, 178);
+  align-items: right;
 }
 button[type="submit"]:hover {
   background-color: #74daba;
@@ -90,6 +91,17 @@ button[type="submit"]:hover {
   align-items: center;
   padding: 0.75rem;
 }
+
+#existingcategory-one,
+#existingcategory-two,
+#existingcategory-three,
+#existingcategory-four,
+#existingcategory-five {
+  width: 100%;
+  text-align: left;
+  margin: 6px;  
+}
+
 
 @media all and (max-width: 500px) {
   body {
