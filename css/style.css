@@ -25,6 +25,9 @@ body {
   border: 2px solid white;
 }
 
+.form-input {
+  border: 2px solid black;
+}
 
 .to-do-input-section {
   height: 4rem;
@@ -48,10 +51,9 @@ body {
 input#to-do {
   min-width: 320px;
   flex-grow: 1;
-  border: none;
   height: 2rem;
   padding: 5px 15px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  outline: 0.5px solid rgb(50, 144, 178);
 }
 
 button[type="submit"] {
@@ -61,6 +63,8 @@ button[type="submit"] {
   padding: 5px 15px;
   cursor: pointer;
   background-color: rgb(50, 144, 178);
+  margin-top: 10px;
+  float: right;
 }
 
 button[type="submit"]:hover {
@@ -101,6 +105,7 @@ button[type="submit"]:hover {
   width: 100%;
   text-align: left;
   margin: 6px;  
+  padding: 6px;
 }
 
 
