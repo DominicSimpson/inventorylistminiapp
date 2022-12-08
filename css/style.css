@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap');
 
 * {
   box-sizing: border-box;
@@ -22,6 +22,7 @@ body {
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   box-shadow: rgba(0, 0, 0, 0.32) 0px 1px 4px;
   background-color: #f5f5f5;
+  border: 2px solid white;
 }
 
 legend {
@@ -32,8 +33,14 @@ legend {
   height: 4rem;
   display: flex;
   flex-direction: column;
-  background-color: #6f73d2;
+  background-color: #10124f;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.to-do-input-section h1 {
+    color: white;
+    margin-left: 20px;
+
 }
 
 #to-do-input {
