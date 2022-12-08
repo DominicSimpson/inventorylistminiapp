@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opwsz@8..144&display=swap');
 
 * {
   box-sizing: border-box;
@@ -25,9 +25,6 @@ body {
   border: 2px solid white;
 }
 
-legend {
-    background-color: #ffdf9f;
-}
 
 .to-do-input-section {
   height: 4rem;
@@ -40,7 +37,6 @@ legend {
 .to-do-input-section h1 {
     color: white;
     margin-left: 20px;
-
 }
 
 #to-do-input {
@@ -52,7 +48,6 @@ legend {
 input#to-do {
   min-width: 320px;
   flex-grow: 1;
-  border-radius: 25px;
   border: none;
   height: 2rem;
   padding: 5px 15px;
@@ -114,15 +109,15 @@ button[type="submit"]:hover {
     flex-grow: 1;
     overflow: auto;
   }
-  .todo-container {
+  /* .todo-container {
     border-radius: 0;
     height: 100%;
-  }
+  } */
   ul:first-child {
     margin-top: 0.5rem;
   }
   #to-do-input {
-  gap: 3px;
+  gap: 5px;
   }
   input#to-do {
     min-width: 200px;
