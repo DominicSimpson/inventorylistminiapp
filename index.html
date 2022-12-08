@@ -8,6 +8,40 @@
     <title>Inventory List Mini-App</title>
 </head>
 <body>
+    <div class="wrapper">
+        <!--Inventory input area-->
+        <section class="to-do-input-section">
+        <h1>Add to inventory</h1>
+          <form class="form" action="" id="to-do-input">
+            <fieldset>
+                <legend>Create a new category</legend>
+                <input
+                    class="form-input"
+                    required
+                    aria-label="Enter task"
+                    type="text"
+                    id="to-do"
+                    name="to-do"
+                    placeholder="Enter a to-do item"
+                >
+                <button type="submit" id="submit-btn">Next</button>
+            </fieldset>
+          </form>
+        </section>
+  
+  
+        <!--To-do list area-->
+        <section class="to-do-list" id="main">
+          <div class="todo-container">
+  <!--           <p class="no-tasks-msg">You don't have any tasks at the moment.</p> -->
+            <ul class="list" id="inventorylistsection"></ul>
+          </div>
+        </section>
+  
+        <!--Completed tasks area?-->
+  
+  
+      </div>
     <script src="scripts/script.js"></script>
 </body>
 </html>
