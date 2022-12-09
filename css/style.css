@@ -16,23 +16,26 @@ body {
 
 }
 .wrapper {
-    max-width: 400px;
+    max-width: 350px;
     margin: 0 auto;
-    background-color: black;
+    background-color:rgb(23, 2, 2);
     border: 2px solid white;
     height: 600px;
 }
 
+fieldset {
+    border-style: hidden;
+}
+
 .form-input {
-    border: 2px solid black;
+    border: 0.5px solid rgb(18, 179, 237);
 }
 
 .to-do-input-section {
     height: 4rem;
     display: flex;
     flex-direction: column;
-    background-color: #10124f;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    background-color: #020435;
 }
 
 .to-do-input-section h1 {
@@ -62,7 +65,7 @@ input#to-do {
     flex-grow: 1;
     height: 2rem;
     padding: 5px 15px;
-    outline: 0.5px solid rgb(50, 144, 178);
+    outline: 0.5px solid rgb(18, 179, 237);
     margin-left: 7px;
 }
 
@@ -72,9 +75,10 @@ button[type="submit"] {
     height: 2rem;
     padding: 5px 15px;
     cursor: pointer;
-    background-color: rgb(50, 144, 178);
-    margin-top: 10px;
+    background-color: rgb(18, 179, 237);
     float: right;
+    margin: 5px 11px 0px 0px;
+    color: white;
 }
 
 button[type="submit"]:hover {
