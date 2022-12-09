@@ -9,7 +9,6 @@ html {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 2.5%;
     background-color: rgb(23, 2, 2);
@@ -29,6 +28,7 @@ fieldset {
 
 .form-input {
     border: 0.5px solid rgb(18, 179, 237);
+    background-color: #020435;
 }
 
 .to-do-input-section {
@@ -119,10 +119,14 @@ button[type="submit"]:hover {
     max-width: 100%;
     text-align: left;
     margin: 7px 0 7px 7px;
-    padding: 6px;
+    padding: 8px;
     min-width: 300px;
+    color: white;
+    background-color: #020435;
+    font-family: 'Montserrat', sans-serif;
+    border: 0.1px solid rgb(18, 179, 237);
+    border-style: outset;
 }
-
 
 @media all and (max-width: 500px) {
   body {
