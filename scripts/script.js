@@ -47,6 +47,8 @@ const addTaskItem = () => {
   taskItem.classList = "listItem";
   const taskNum = new Date().getTime().toString();
   taskItem.dataset.taskNum = taskNum;
+    
+
 
   if (input.value === "") return;
 
@@ -87,6 +89,7 @@ const addTaskItem = () => {
   checkbox.addEventListener("click", (e) => {
     markTaskAsComplete(e.target);
   })
+
 };
 
 // <========== Function allows user to delete a new task  ==========> 
@@ -139,3 +142,9 @@ submitBtn.addEventListener("click", (e) => {
   addTaskItem();
 });
 
+// let existingCategoryOne = document.getElementById('existingcategory-one');
+
+// existingCategoryOne.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   addTaskItem();
+// })
