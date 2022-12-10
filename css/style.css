@@ -22,19 +22,14 @@ body {
   box-shadow: rgba(0, 0, 0, 0.32) 0px 1px 4px;
   background-color: #f5f5f5;
 }
-.to-do-input-section {
-  height: 4rem;
-  display: flex;
-  padding: 1rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #6f73d2;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
-  background-image: linear-gradient(90deg, #6f73d2, #9fa0ff, #dab6fc);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+.newcategory-input-section {
+    height:                     4rem;
+    display:                    flex;
+    flex-direction:             column;
+    background-color:           #020435;
 }
+
 #to-do-input {
   display: flex;
   width: 100%;
