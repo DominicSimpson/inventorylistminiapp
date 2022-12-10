@@ -249,6 +249,6 @@ input[type="checkbox"]:checked + span + button .fa-x {
     color:                      rgb(159, 156, 156);
 }
 
-input[type="checkbox"]:checked + span + button .fa-x:hover, button.remove-task-btn:focus .fa-x {
+input[type="checkbox"]:checked + span + button .fa-x:hover, button.remove-category-btn:focus .fa-x {
     color:                      #6f73d2
 }
