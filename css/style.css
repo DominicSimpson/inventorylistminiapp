@@ -12,11 +12,21 @@ body {
 }
 .wrapper {
   display:                    flex;
-  max-width:                  350px;
+  width:                      350px;
   margin:                     0 auto;
   background-color:           white;
   border:                     2px solid black;
-  height:                     600px;
+  height:                     100vh;
+  max-width: 100%;
+  overflow-y:                auto;
+
+}
+
+.form-input {
+  border:                     2px solid rgb(18, 179, 237);
+  font-family:                'Montserrat', sans-serif;
+  font-weight:                bold;
+  color:                      white;
 }
 
 .newcategory-input-section {
@@ -69,6 +79,7 @@ button[type="submit"] {
   float: right;
   background-color: #38e4ae;
   margin-top: 150px;
+  margin-right: 40px;
 }
 
 button[type="submit"]:hover {
@@ -114,6 +125,7 @@ button[type="submit"]:hover {
     max-width:                  100%;
     min-width:                  300px;
     text-align:                 left;
+    font-family:                'Montserrat', sans-serif;
 }
 
 
@@ -162,6 +174,7 @@ button[type="submit"]:hover {
   margin-left: 0;
   padding: 0;  
   border: 2px solid black;
+  max-height: inherit;
 
 }
 
