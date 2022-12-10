@@ -1,139 +1,140 @@
-const input = document.querySelector('input'); // Grabs input
+// grabs input
+const input = document.querySelector("input");
+// grabs list
+const list = document.querySelector(".list");
+// grabs submit button
+const submitBtn = document.getElementById("submit-btn");
+// Array to store user's tasks
+let userTasks = JSON.parse(localStorage.getItem("userTasks")) || [];
 
-const list = document.querySelector('list'); // Grabs list of inputted categories
+// <========== Function that retrieves tasks from local storage to update DOM  ==========> 
+const getTasksFromLocalStorage = (task) => {
+  // Create a new <li> element and give it a class and unique ID
+  const taskItem = document.createElement("li");
+  taskItem.classList = "listItem";
+  taskItem.dataset.taskNum = task.id;
 
-const submitBtn = document.getElementById('submit-btn'); // Grabs submit button
+  // Create the content inside the <li> element
+  taskItem.innerHTML = `
+  <input aria-label="Mark task as complete" type="checkbox"/>
+  <span>${task.description}</span>
+  <button type="button" class="remove-task-btn"><i class="fa-solid fa-x"></i></button>
+  `;
 
-let categoriesList = JSON.parse(localStorage.getItem('categoriesList')) || []; // Array to store the 
-                                                                         // user's inputted categories
+  // Add the <li> element from the storage to the DOM
+  list.appendChild(taskItem);
 
-// <========== Function that retrieves list of categories from local storage to update DOM  ==========> 
-const getCategoriesFromLocalStorage = (category) => {
-    // Create a new <li> element and give it both a class property and unique ID
-    const categoryListItem = document.createElement("li");
-    categoryListItem.classList = "listItem";
-    categoryListItem.dataset.categoryItemNum = category.id;
-
-    // Creates the content inside the <li> element
-    categoryListItem.innerHTML = `
-    <input aria-label="Mark category as complete" type="checkbox"/>
-    <span>${category.description}</span>
-    <button type="button" class="remove-category-btn"><i class="fa-solid fa-x"></i></button>
-    `;
-
-   // Adds the <li> element from the storage to the DOM
-    list.appendChild(categoryListItem);
-
-    // Attach event listener to checkbox so that user can toggle completed state
-    const checkbox = categoryListItem.querySelector("input[type='checkbox']");
-    checkbox.addEventListener('click', (e) => {
-        markCategoryAsComplete(e.target);
-    })
-
-    if (category.completed === true){ // if the category's completed status is true, check the box so user doesn't have to retick it
-        checkbox.checked = true;
-    }
-
-    // Allows the X button to delete with the function below
-  const removeCategoryButton = categoryListItem.querySelector(".remove-category-btn");
-  removeCategoryButton.addEventListener("click", (e) => {
-    deleteCategory(e.target);
+  // Attach event listener to checkbox so that user can toggle completed state
+  const checkbox = taskItem.querySelector("input[type='checkbox']");
+  checkbox.addEventListener("click", (e) => {
+    markTaskAsComplete(e.target);
+  })
+  if (task.completed === true){ // if the task's completed status is true, check the box so user doesn't have to retick it
+    checkbox.checked = true;
+  }
+  // allows the X button to delete with the function below
+  const removeTaskButton = taskItem.querySelector(".remove-task-btn");
+  removeTaskButton.addEventListener("click", (e) => {
+    deleteTask(e.target);
   });
 }
 
 
-// <========== Function that allows user to create a new category  ==========> 
-const addCategoryItem = () => {
-    const categoryListItem = document.createElement("li"); // creates a new <li> element in the DOM
-    categoryListItem.classList = "listItem"; // accesses CSS
-    const categoryItemNum = new Date().getTime().toString(); // assigns each category entry a unique ID
-    console.log(categoryItemNum);
-    categoryListItem.dataset.categoryItemNum = categoryItemNum;
+// <========== Function allows user to create a new task  ==========> 
+const addTaskItem = () => {
+  // Create a new <li> element and give it a class and unique ID
+  const taskItem = document.createElement("li");
+  taskItem.classList = "listItem";
+  const taskNum = new Date().getTime().toString();
+  taskItem.dataset.taskNum = taskNum;
 
-    if (input.value === "") return;
+  if (input.value === "") return;
 
-    // Create the content inside the <li> element
-    categoryListItem.innerHTML = `
-    <input aria-label="Mark category as complete" type="checkbox"/>
-    <span>${input.value}</span>
-    <button type="button" class="remove-category-btn"><i class="fa-solid fa-x"></i></button>
-    `;
+  // Create the content inside the <li> element
+  taskItem.innerHTML = `
+  <input aria-label="Mark task as complete" type="checkbox"/>
+  <span>${input.value}</span>
+  <button type="button" class="remove-task-btn"><i class="fa-solid fa-x"></i></button>
+  `;
 
-    // Add the <li> element from the storage to the DOM
-    list.appendChild(categoryListItem);
+  // Add the <li> element from the storage to the DOM
+  list.appendChild(taskItem);
 
-    // Create an object made up of the: 1) category's description; 2) category's status; 3) category's unique ID
-    const newCategory = {
-      description: input.value,
-      completed: false,
-      id: categoryItemNum,
-    }
+  // Create an object made up of the: 1) task's description; 2) task's status; 3) task's ID
+  const newTask = {
+    description: input.value,
+    completed: false,
+    id: taskNum,
+  }
 
-    categoriesList.push(newCategory); // store the object inside the categoriesList array
+  // Store the object inside the tasks array
+  userTasks.push(newTask);
 
-    localStorage.setItem("categoriesList", JSON.stringify(categoriesList)); // update the categoriesList array in Local Storage
+  // Update the tasks array in local storage
+  localStorage.setItem("userTasks", JSON.stringify(userTasks));
+  
+  // Reset the input 
+  input.value = "";
 
-    input.value = ""; // Reset the value
+  // allows the X button to delete with the function below
+  const removeTaskButton = taskItem.querySelector(".remove-task-btn");
+  removeTaskButton.addEventListener("click", (e) => {
+    deleteTask(e.target);
+  });
 
-    // Allows the X button to delete with the function below
-    const removeCategoryButton = categoryListItem.querySelector(".remove-category-btn");
-    removeCategoryButton.addEventListener("click", (e) => {
-      deleteCategory(e.target);
-    });
-
-    // Attach event listener to checkbox so that user can toggle completed state
-    const checkbox = categoryListItem.querySelector("input[type='checkbox']");
-    checkbox.addEventListener("click", (e) => {
-    markCategoryAsComplete(e.target);
-
-    })
+  // Attach event listener to checkbox so that user can toggle completed state
+  const checkbox = taskItem.querySelector("input[type='checkbox']");
+  checkbox.addEventListener("click", (e) => {
+    markTaskAsComplete(e.target);
+  })
 };
 
-// <========== Function allows user to delete a new category  ==========> 
-const deleteCategory = (e) => {
-    const categoryToDelete = e.closest('li');   // uses .closest method to remove closest <li> element
+// <========== Function allows user to delete a new task  ==========> 
+const deleteTask = (e) => {
+  // uses .closest to remove 'closest li element'
+  const taskToDelete = e.closest("li");
 
-    const uniqueID = categoryToDelete.dataset.categoryItemNum; // Gets the ID of the category to delete
+  // Gets the ID of the task to delete
+  const uniqueID = taskToDelete.dataset.taskNum;
 
-    categoriesList = categoriesList.filter(item => item.id !== uniqueID);
+  // Use filter to remove (filter out) the task to remove and update the tasks array
+  userTasks = userTasks.filter(item => item.id !== uniqueID);
 
-    localStorage.setItem("categoriesList", JSON.stringify(categoriesList)); // update the categoriesList array in Local Storage
+  // Update the tasks array in local storage
+  localStorage.setItem("userTasks", JSON.stringify(userTasks));
 
-    categoryToDelete.remove();
-
+  // remove the task
+  taskToDelete.remove();
 };
 
-// <========== Function allows user to mark a category as complete  ==========> 
+// <========== Function allows user to mark a task as complete  ==========> 
+const markTaskAsComplete = (e) => {
+  // uses .closest to find the 'closest li element'
+  const selectedTask = e.closest("li");
 
-const markCategoryAsComplete = (e) => {
+  // Gets the ID of the task to delete
+  const uniqueID = selectedTask.dataset.taskNum;
 
-    const selectedCategory = e.closest("li"); // uses .closest method to find the closest <li> element
+  // Find the item (which is an object) in the tasks array which has the same ID as the one clicked by user
+  const index = userTasks.findIndex(item => item.id === uniqueID);
 
-    const uniqueID = selectedCategory.dataset.categoryItemNum; // Gets the ID of the task to delete
+  // Update the object's completed status
+  if (userTasks[index].completed === true){
+    userTasks[index].completed = false;
+  }
+  else {
+    userTasks[index].completed = true;
+  }
 
-    // Find the object item in the category array which has the same ID as the one clicked by user
+  // Update the tasks array in local storage
+  localStorage.setItem("userTasks", JSON.stringify(userTasks));
+}
 
-    const index = categoriesList.findIndex(item => item.id === uniqueID);
-
-    if (categoriesList[index].completed === true) {   // Update the object's completed status
-      categoriesList[index].completed = false;
-    }
-    else {
-      categoriesList[index].completed = true;
-    }
-
-    localStorage.setItem("categoriesList", JSON.stringify(categoriesList)); // update the categoriesList array in Local Storage
-
-
-    }
-
-    // Event Listeners //
-
-    document.addEventListener('DOMContentLoaded', () => {
-      categoriesList.forEach(category => {getCategoriesFromLocalStorage(category)})
-    })
-
-    submitBtn.addEventListener('click', (e) => { // stops page from reloading
-      e.preventDefault;
-      addCategoryItem;
-    })
+// <========== Event Listeners ==========>
+document.addEventListener("DOMContentLoaded", () => {
+  userTasks.forEach(task => {getTasksFromLocalStorage(task)})
+})
+submitBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  addTaskItem();
+});

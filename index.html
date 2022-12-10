@@ -1,59 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Inventory List Mini-App</title>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" />
+    <title>To-do list</title>
+  </head>
+  <body>
     <div class="wrapper">
-        <!--Inventory input area-->
-        <section class="newcategory-input-section">
-            <h1>Add to inventory</h1>
-            <form class="form" action="" id="newcategory-input">
-                <fieldset>
-                    <h2>Create a new category</h2>
-                    <input
-                        class="form-input"
-                        required
-                        aria-label="Enter category"
-                        type="text"
-                        id="newcategory"
-                        name="newcategory"
-                        placeholder="e.g. Merch"
-                    >
-                    <h2>Category Logo</h2>
-                    
-                    <h2>Select existing category</h2>
-                        <button id="existingcategory-one">Drinks</button>
-                        <button id="existingcategory-two">Food</button>
-                        <button id="existingcategory-three">Clothing</button>
-                        <button id="existingcategory-four">Custom value</button>
-                        <button id="existingcategory-five">Just added value</button>
+      <!--Task input area-->
+      <section class="to-do-input-section">
+        <form class="form" action="" id="to-do-input">
+          <input
+            class="form-input"
+            required
+            aria-label="Enter task"
+            type="text"
+            id="to-do"
+            name="to-do"
+            placeholder="Enter a to-do item"
+          />
+          <button type="submit" id="submit-btn">Submit</button>
+        </form>
+      </section>
 
-                    <button type="submit" id="submit-btn">Next</button>
-                </fieldset>
-            </form>
-        </section>
-  
-  
-        <!--To-do list area-->
-        <section class="newcategory-list" id="main">
-          <div class="newcategory-container">
-  <!--           <p class="no-tasks-msg">You don't have any tasks at the moment.</p> -->
-            <ul class="list" id="inventorylistsection"></ul>
-          </div>
-        </section>
-  
-        <!--Completed tasks area?-->
-  
-  
-      </div>
-    <script src="scripts/script.js"></script>
-</body>
+
+      <!--To-do list area-->
+      <section class="to-do-list" id="main">
+        <div class="todo-container">
+<!--           <p class="no-tasks-msg">You don't have any tasks at the moment.</p> -->
+          <ul class="list" id=></ul>
+        </div>
+      </section>
+
+      <!--Completed tasks area?-->
+
+
+    </div>
+    <script src="./scripts/test-helpers.js"></script>
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/script.test.js"></script>
+  </body>
 </html>
