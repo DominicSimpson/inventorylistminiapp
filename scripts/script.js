@@ -87,4 +87,18 @@ const addCategoryItem = () => {
     markCategoryAsComplete(e.target);
 
     })
-} 
+};
+
+// <========== Function allows user to delete a new task  ==========> 
+const deleteCategory = (e) => {
+    const categoryToDelete = e.closest('li');   // uses .closest method to remove 'closest li element'
+
+    const uniqueID = categoryToDelete.dataset.categoryItemNum; // Gets the ID of the task to delete
+
+    categoriesList = categoriesList.filter(item => item.id !== uniqueID);
+
+    localStorage.setItem("categoriesList", JSON.stringify(categoriesList)); // update the categoriesList array in Local Storage
+
+    categoryToDelete.remove();
+
+}
