@@ -89,11 +89,11 @@ const addCategoryItem = () => {
     })
 };
 
-// <========== Function allows user to delete a new task  ==========> 
+// <========== Function allows user to delete a new category  ==========> 
 const deleteCategory = (e) => {
-    const categoryToDelete = e.closest('li');   // uses .closest method to remove 'closest li element'
+    const categoryToDelete = e.closest('li');   // uses .closest method to remove closest <li> element
 
-    const uniqueID = categoryToDelete.dataset.categoryItemNum; // Gets the ID of the task to delete
+    const uniqueID = categoryToDelete.dataset.categoryItemNum; // Gets the ID of the category to delete
 
     categoriesList = categoriesList.filter(item => item.id !== uniqueID);
 
@@ -101,4 +101,30 @@ const deleteCategory = (e) => {
 
     categoryToDelete.remove();
 
-}
+};
+
+// <========== Function allows user to mark a category as complete  ==========> 
+
+const markCategoryAsComplete = (e) => {
+
+    const selectedCategory = e.closest("li"); // uses .closest method to find the closest <li> element
+
+    const uniqueID = selectedCategory.dataset.categoryItemNum; // Gets the ID of the task to delete
+
+    // Find the object item in the category array which has the same ID as the one clicked by user
+
+    const index = categoriesList.findIndex(item => item.id === uniqueID);
+
+    if (categoriesList[index].completed === true) {   // Update the object's completed status
+      categoriesList[index].completed = false;
+    }
+    else {
+      categoriesList[index].completed = true;
+    }
+
+    // Update the tasks array in local storage
+    localStorage.setItem("categoriesList", JSON.stringify(categoriesList)); // update the categoriesList array in Local Storage
+
+
+
+    }
