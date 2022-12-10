@@ -44,7 +44,24 @@ const getCategoriesFromLocalStorage = (category) => {
 
 // <========== Function that allows user to create a new task  ==========> 
 const addCategoryItem = () => {
-    const categoryListItem = document.createElement("li");
-    categoryListItem.classList = "listItem";
+    const categoryListItem = document.createElement("li"); // creates a new <li> element in the DOM
+    categoryListItem.classList = "listItem"; // accesses CSS
+    const categoryItemNum = new Date().getTime().toString(); // assigns each category entry a unique ID
+    categoryListItem.dataset.categoryItemNum = categoryItemNum;
 
-    }
+    if (input.value === "") return;
+
+    // Create the content inside the <li> element
+    categoryListItem.innerHTML = `
+    <input aria-label="Mark task as complete" type="checkbox"/>
+    <span>${input.value}</span>
+    <button type="button" class="remove-task-btn"><i class="fa-solid fa-x"></i></button>
+    `;
+
+    // Add the <li> element from the storage to the DOM
+    list.appendChild(categoryListItem);
+
+    // Attach event listener to checkbox so that user can toggle completed state
+    
+
+    } 
