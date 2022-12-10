@@ -24,10 +24,26 @@ body {
 }
 
 .newcategory-input-section {
-    height:                     4rem;
-    display:                    flex;
-    flex-direction:             column;
-    background-color:           #020435;
+  height: 4rem;
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #6f73d2;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  background-image: linear-gradient(90deg, #6f73d2, #9fa0ff, #dab6fc);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.newcategory-input-section h1 {
+    color:                      white;
+    margin-left:                15px;
+    font-family:                'Montserrat', sans-serif;
+    font-size:                  1.25rem;
+    padding-top:                300px;
+    text-align: left;
 }
 
 #to-do-input {
@@ -82,6 +98,22 @@ button[type="submit"]:hover {
   align-items: center;
   padding: 0.75rem;
 }
+
+#existingcategories {
+    margin-bottom: -120px;
+}
+
+#existingcategory-one,
+#existingcategory-two,
+#existingcategory-three,
+#existingcategory-four,
+#existingcategory-five {
+    margin:                     7px 0 7px 7px;
+    max-width:                  100%;
+    min-width:                  300px;
+    text-align:                 left;
+}
+
 
 @media all and (max-width: 500px) {
   body {

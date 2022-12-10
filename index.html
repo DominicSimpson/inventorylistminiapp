@@ -13,7 +13,8 @@
       <!--Task input area-->
       <section class="newcategory-input-section">
         <h1>Add to Inventory</h1>
-        <form class="form" action="" id="to-do-input">
+        <form class="form" action="" id="newcategory-input">
+        <h2>Create a new category</h2>
           <input
             class="form-input"
             required
@@ -21,9 +22,21 @@
             type="text"
             id="to-do"
             name="to-do"
-            placeholder="Enter a to-do item"
+            placeholder="e.g. Merch"
           />
-          <button type="submit" id="submit-btn">Submit</button>
+
+          <h2>Category Logo</h2>
+
+          <h2>Select existing category</h2>
+
+          <div id="existingcategories">
+          <button id="existingcategory-one">Drinks</button>
+          <button id="existingcategory-two">Food</button>
+          <button id="existingcategory-three">Clothing</button>
+          <button id="existingcategory-four">Custom value</button>
+          <button id="existingcategory-five">Just added value</button>
+        </div>
+          <button type="submit" id="submit-btn">Next</button>
         </form>
       </section>
 
