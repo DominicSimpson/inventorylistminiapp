@@ -122,9 +122,18 @@ const markCategoryAsComplete = (e) => {
       categoriesList[index].completed = true;
     }
 
-    // Update the tasks array in local storage
     localStorage.setItem("categoriesList", JSON.stringify(categoriesList)); // update the categoriesList array in Local Storage
 
 
-
     }
+
+    // Event Listeners //
+
+    document.addEventListener('DOMContentLoaded', () => {
+      categoriesList.forEach(category => {getCategoriesFromLocalStorage(category)})
+    })
+
+    submitBtn.addEventListener('click', (e) => { // stops page from reloading
+      e.preventDefault;
+      addCategoryItem;
+    })
