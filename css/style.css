@@ -63,10 +63,9 @@ input#to-do {
   max-width: 100%;
   flex-grow: 1;
   border-radius: 25px;
-  border: none;
+  border: 2px solid black;
   height: 2rem;
   padding: 5px 15px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
   margin-left: 7px;
 }
 
@@ -79,7 +78,7 @@ button[type="submit"] {
   float: right;
   background-color: #38e4ae;
   margin-top: 150px;
-  margin-right: 40px;
+  margin-right: 25px;
 }
 
 button[type="submit"]:hover {
@@ -173,7 +172,6 @@ button[type="submit"]:hover {
   list-style: none;
   margin-left: 0;
   padding: 0;  
-  border: 2px solid black;
   max-height: inherit;
 
 }

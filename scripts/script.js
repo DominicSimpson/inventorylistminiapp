@@ -18,7 +18,7 @@ const getTasksFromLocalStorage = (task) => {
   taskItem.innerHTML = `
   <input aria-label="Mark task as complete" type="checkbox"/>
   <span>${task.description}</span>
-  <button type="button" class="remove-task-btn"><i class="fa-solid fa-x"></i></button>
+  <button type="button" class="remove-task-btn"><i class="fa-solid fa-trash-can"></i></button>
   `;
 
   // Add the <li> element from the storage to the DOM
@@ -54,7 +54,7 @@ const addTaskItem = () => {
   taskItem.innerHTML = `
   <input aria-label="Mark task as complete" type="checkbox"/>
   <span>${input.value}</span>
-  <button type="button" class="remove-task-btn"><i class="fa-solid fa-x"></i></button>
+  <button type="button" class="remove-task-btn"><i class="fa-solid fa-trash-can"></i></button>
   `;
 
   // Add the <li> element from the storage to the DOM
