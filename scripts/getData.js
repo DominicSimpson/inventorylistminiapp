@@ -14,18 +14,18 @@ const orderBy = formData.get("data");
 console.log(formData);
 
 // request icon data from Flaticon
-fetch(`https://api.flaticon.com/v3/search/icons/${orderBy}`
+fetch(`https://api.flaticon.com/v3/search/icons/${orderBy}`)
 .then((response) => {
 if (!response.ok) throw new Error(response.status);
 return response.json();
 })
 // if a successful response
-.then((iconData) => {
+.then((json) => {
 const heading = document.createElement("h2");
-heading.textContent = iconData.orderBy;
+heading.textContent = json.orderBy;
 
 const image = document.createElement("img");
-image.src = iconData.icons.font_default;
+image.src = json.icons.font_default;
 image.alt = "";
 
             // const stats = document.createElement("h3");
@@ -46,6 +46,5 @@ if (error.message === "404") {
 } else {
   output.textContent = "⚠️ Something went wrong";
   }
-  }))
+  });
 });
-
