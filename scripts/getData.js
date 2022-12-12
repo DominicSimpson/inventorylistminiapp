@@ -30,7 +30,7 @@ function getDataFromApi() {
     }).catch((error) => {
         console.log(error);
         if (error.message === "404") {
-            list.textContent = `⚠️ Couldn't find "}"`;
+            list.textContent = `⚠️ Couldn't find "${res.description}"`;
         } else {
             list.textContent = "⚠️ Something went wrong";
         }
