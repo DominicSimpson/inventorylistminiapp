@@ -1,12 +1,12 @@
 
 const form = document.querySelector("form");
-const output = document.querySelector("output");
+const list = document.querySelector("list");
 
 form.addEventListener("submit", (event) => {
 event.preventDefault();
 
 // clear out any previous results
-output.innerHTML = "";
+list.innerHTML = "";
 
 // get the value of the field with icon name
 const formData = new FormData(form);
@@ -36,16 +36,16 @@ image.alt = "";
             // heading.textContent = pokemonData.type;
 
             // output.append(heading, image, stats, type);
-output.append(heading, image);
+list.append(heading, image);
 
 })
 // if the request is unsuccessful
 .catch((error) => {
 console.log(error);
 if (error.message === "404") {
-  output.textContent = `⚠️ Couldn't find "${orderBy}"`;
+  list.textContent = `⚠️ Couldn't find "${orderBy}"`;
 } else {
-  output.textContent = "⚠️ Something went wrong";
+  list.textContent = "⚠️ Something went wrong";
   }
   });
 });
