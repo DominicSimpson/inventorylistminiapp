@@ -200,16 +200,7 @@ li ~ li {
 label {
   background-color: #38e4ae;
 }
-input[type="checkbox"]{
-  margin: 0;
-  transform: scale(1.5);
-  accent-color: #6f73d2;
-  cursor: pointer;
-}
-input[type="checkbox"]:checked + span {
-  color: rgb(159, 156, 156);
-  text-decoration: line-through;
-}
+
 .remove-task-btn {
   display: inline-block;
   background-color: #FFF;
@@ -217,19 +208,13 @@ input[type="checkbox"]:checked + span {
   cursor: pointer;
   aspect-ratio: 1;
 }
-.fa-x {
+.fa-solid {
   background-color: transparent;
   font-size: 1.2rem;
   color: #000;
 }
-.fa-x:hover {
+.fa-solid:hover {
   color: #6f73d2;
-}
-input[type="checkbox"]:checked + span + button .fa-x {
-  color:rgb(159, 156, 156);
-}
-input[type="checkbox"]:checked + span + button .fa-x:hover, button.remove-task-btn:focus .fa-x {
-  color: #6f73d2
 }
 
 output {
