@@ -10,8 +10,9 @@ output.innerHTML = "";
 
 // get the value of the field with icon name
 const formData = new FormData(form);
-const orderBy = formData.get("data");
-console.log(formData);
+const data = Object.fromEntries(formData);
+const orderBy = data.get(data);
+console.log(orderBy);
 
 // request icon data from Flaticon
 fetch(`https://api.flaticon.com/v3/search/icons/${orderBy}`)
