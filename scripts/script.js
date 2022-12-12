@@ -1,15 +1,15 @@
-// grabs input
-const input = document.querySelector("input");
-// grabs list
-const list = document.querySelector(".list");
-// grabs submit button
-const submitBtn = document.getElementById("submit-btn");
-// Array to store user's tasks
-let userTasks = JSON.parse(localStorage.getItem("userTasks")) || [];
+const input = document.querySelector("input"); // grab input
 
-// <========== Function that retrieves tasks from local storage to update DOM  ==========> 
+const list = document.querySelector(".list"); // grab list containing inputted categories
+
+const submitBtn = document.getElementById("submit-btn"); // grabs submit button
+
+let userTasks = JSON.parse(localStorage.getItem("userTasks")) || []; // Array to store inputted categories
+
+
+// <========== Function that retrieves categories from local storage to update DOM  ==========> 
 const getTasksFromLocalStorage = (task) => {
-  // Create a new <li> element and give it a class and unique ID
+  // Creates a new <li> element and assigns it a class and unique ID
   const taskItem = document.createElement("li");
   taskItem.classList = "listItem";
   taskItem.dataset.taskNum = task.id;
@@ -23,15 +23,7 @@ const getTasksFromLocalStorage = (task) => {
   // Add the <li> element from the storage to the DOM
   list.appendChild(taskItem);
 
-  // Attach event listener to checkbox so that user can toggle completed state
-  const checkbox = taskItem.querySelector("input[type='checkbox']");
-  checkbox.addEventListener("click", (e) => {
-    markTaskAsComplete(e.target);
-  })
-  if (task.completed === true){ // if the task's completed status is true, check the box so user doesn't have to retick it
-    checkbox.checked = true;
-  }
-  // allows the X button to delete with the function below
+  // Allows the dustbin icon to delete with the function below
   const removeTaskButton = taskItem.querySelector(".remove-task-btn");
   removeTaskButton.addEventListener("click", (e) => {
     deleteTask(e.target);
@@ -47,8 +39,6 @@ const addTaskItem = () => {
   const taskNum = new Date().getTime().toString();
   taskItem.dataset.taskNum = taskNum;
     
-
-
   if (input.value === "") return;
 
   // Create the content inside the <li> element
@@ -82,12 +72,6 @@ const addTaskItem = () => {
     deleteTask(e.target);
   });
 
-  // Attach event listener to checkbox so that user can toggle completed state
-  const checkbox = taskItem.querySelector("input[type='checkbox']");
-  checkbox.addEventListener("click", (e) => {
-    markTaskAsComplete(e.target);
-  })
-
 };
 
 // <========== Function allows user to delete a new task  ==========> 
@@ -117,9 +101,8 @@ submitBtn.addEventListener("click", (e) => {
   addTaskItem();
 });
 
-// let existingCategoryOne = document.getElementById('existingcategory-one');
+let existingCategoryOne = document.getElementById('existingcategory-one');
 
-// existingCategoryOne.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   addTaskItem();
-// })
+existingCategoryOne.addEventListener("click", (e) => {
+  addTaskItem(e.target);
+})
