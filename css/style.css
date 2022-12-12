@@ -26,7 +26,8 @@ body {
   border:                     2px solid rgb(18, 179, 237);
   font-family:                'Montserrat', sans-serif;
   font-weight:                bold;
-  color:                      white;
+  color:                      black;
+  
 }
 
 .newcategory-input-section {
@@ -229,4 +230,8 @@ input[type="checkbox"]:checked + span + button .fa-x {
 }
 input[type="checkbox"]:checked + span + button .fa-x:hover, button.remove-task-btn:focus .fa-x {
   color: #6f73d2
+}
+
+output {
+  display: block;
 }

@@ -16,7 +16,6 @@ const getTasksFromLocalStorage = (task) => {
 
   // Create the content inside the <li> element
   taskItem.innerHTML = `
-  <input aria-label="Mark task as complete" type="checkbox"/>
   <span>${task.description}</span>
   <button type="button" class="remove-task-btn"><i class="fa-solid fa-trash-can"></i></button>
   `;
@@ -54,7 +53,6 @@ const addTaskItem = () => {
 
   // Create the content inside the <li> element
   taskItem.innerHTML = `
-  <input aria-label="Mark task as complete" type="checkbox"/>
   <span>${input.value}</span>
   <button type="button" class="remove-task-btn"><i class="fa-solid fa-trash-can"></i></button>
   `;
@@ -109,29 +107,6 @@ const deleteTask = (e) => {
   // remove the task
   taskToDelete.remove();
 };
-
-// <========== Function allows user to mark a task as complete  ==========> 
-const markTaskAsComplete = (e) => {
-  // uses .closest to find the 'closest li element'
-  const selectedTask = e.closest("li");
-
-  // Gets the ID of the task to delete
-  const uniqueID = selectedTask.dataset.taskNum;
-
-  // Find the item (which is an object) in the tasks array which has the same ID as the one clicked by user
-  const index = userTasks.findIndex(item => item.id === uniqueID);
-
-  // Update the object's completed status
-  if (userTasks[index].completed === true){
-    userTasks[index].completed = false;
-  }
-  else {
-    userTasks[index].completed = true;
-  }
-
-  // Update the tasks array in local storage
-  localStorage.setItem("userTasks", JSON.stringify(userTasks));
-}
 
 // <========== Event Listeners ==========>
 document.addEventListener("DOMContentLoaded", () => {
