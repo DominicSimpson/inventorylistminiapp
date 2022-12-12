@@ -21,7 +21,7 @@ function getDataFromApi() {
             .then(result =>{
                 result.data.map(res=>{
                     console.log('res',res);
-                    list.innerHTML += `<img src="${res.images[16]}"/>`+ '' +res.description;
+                    list.innerHTML += `<img src="${res.images[16]}"/>`+ '' + res.description;
                 });
             })
             .catch(error => console.log('error', error));
