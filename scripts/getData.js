@@ -1,51 +1,38 @@
+function getDataFromApi() {
+    const searchVal = document.getElementById('to-do').value;
+    let formdata = new FormData();
+    formdata.append("apikey", "hK7QBmug4XezVHeQ7SZUD8DAAKboDNGvCQUheaOsGULFopXx");
+    let requestOptions = {
+        method: 'POST',
+        body: formdata,
+    };
+    fetch("https://api.flaticon.com/v3/app/authentication", requestOptions).then(function (res) {
+        return res.json();
+    }).then(function (data) {
+        let myHeaders = new Headers();
+        const tokenBearer = "Bearer "+data.data.token;
+        myHeaders.append("Authorization", tokenBearer);
+        let requestOptions = {
+            method: 'GET',
+            headers: myHeaders
+        };
+        fetch(`https://api.flaticon.com/v3/search/icons/false?q=${searchVal}`, requestOptions)
+            .then(response => response.json())
+            .then(result =>{
+                result.data.map(res=>{
+                    console.log('res',res);
+                    list.innerHTML += `<img src="${res.images[16]}"/>`+ '' +res.description;
+                });
+            })
+            .catch(error => console.log('error', error));
 
-const form = document.querySelector("form");
-const list = document.querySelector("list");
 
-form.addEventListener("submit", (event) => {
-event.preventDefault();
-
-// clear out any previous results
-list.innerHTML = "";
-
-// get the value of the field with icon name
-const formData = new FormData(form);
-const data = Object.fromEntries(formData);
-const orderBy = data.get(data);
-console.log(orderBy);
-
-// request icon data from Flaticon
-fetch(`https://api.flaticon.com/v3/search/icons/${orderBy}`)
-.then((response) => {
-if (!response.ok) throw new Error(response.status);
-return response.json();
-})
-// if a successful response
-.then((json) => {
-const heading = document.createElement("h2");
-heading.textContent = json.orderBy;
-
-const image = document.createElement("img");
-image.src = json.icons.font_default;
-image.alt = "";
-
-            // const stats = document.createElement("h3");
-            // heading.textContent = pokemonData.stats;
-
-            // const type = document.createElement("h4");
-            // heading.textContent = pokemonData.type;
-
-            // output.append(heading, image, stats, type);
-list.append(heading, image);
-
-})
-// if the request is unsuccessful
-.catch((error) => {
-console.log(error);
-if (error.message === "404") {
-  list.textContent = `⚠️ Couldn't find "${orderBy}"`;
-} else {
-  list.textContent = "⚠️ Something went wrong";
-  }
-  });
-});
+    }).catch((error) => {
+        console.log(error);
+        if (error.message === "404") {
+            list.textContent = `⚠️ Couldn't find "}"`;
+        } else {
+            list.textContent = "⚠️ Something went wrong";
+        }
+    });
+}
