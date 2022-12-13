@@ -16,7 +16,7 @@ const getTasksFromLocalStorage = (task) => {
 
   // Create the content inside the <li> element
   taskItem.innerHTML = `
-  <span>${task.description}</span>
+  <span>${task.category}</span>
   <button type="button" class="remove-task-btn"><i class="fa-solid fa-trash-can"></i></button>
   `;
 
@@ -51,8 +51,8 @@ const addTaskItem = () => {
 
   // Create an object made up of the: 1) category's description; 2) category's Boolean status; 3) category's ID
   const newTask = {
-    description: input.value,
-    completed: false,
+    category: input.value,
+    // completed: false,
     id: taskNum,
   }
 
@@ -97,8 +97,8 @@ submitBtn.addEventListener("click", (e) => {
   addTaskItem();
 });
 
-let existingCategoryOne = document.getElementById('existingcategory-one');
+let existingCategory = document.querySelector('.existingcategory');
 
-existingCategoryOne.addEventListener("click", (e) => {
-  addTaskItem(e.target);
-})
+existingCategory.addEventListener("click", (e) => {
+  addTaskItem(e === input.value);
+});

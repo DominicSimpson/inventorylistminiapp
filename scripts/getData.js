@@ -23,7 +23,7 @@ function getDataFromApi() {
                 result.data.map(res => {
                     console.log('res',res);
                     list.innerHTML += `<img src="${res.images[16]}"/>`;
-                    deleteTask(e.target);
+                    deleteTask();
                 });
             })
         
