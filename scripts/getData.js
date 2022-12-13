@@ -23,19 +23,20 @@ function getDataFromApi() {
                 result.data.map(res => {
                     console.log('res',res);
                     list.innerHTML += `<img src="${res.images[16]}"/>`;
+                    deleteTask(e.target);
                 });
             })
         
-
             .catch(error => console.log('error', error));
 
 
     }).catch((error) => {
         console.log(error);
         if (error.message === "404") {
-            list.textContent = `⚠️ Couldn't find "${res.description}"`;
+            list.textContent = `⚠️ Couldn't find "${searchVal}"`;
         } else {
             list.textContent = "⚠️ Something went wrong";
         }
     });
 }
+
