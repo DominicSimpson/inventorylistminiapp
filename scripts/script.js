@@ -1,4 +1,4 @@
-const input = document.querySelector("input"); // grab input
+const input= document.querySelector("input"); // grab input
 
 const list = document.querySelector(".list"); // grab list containing inputted categories
 
@@ -71,6 +71,10 @@ const addTaskItem = () => {
 };
 
 
+
+
+
+
 // <========== Function allows user to delete a new task  ==========> 
 const deleteTask = (e) => {
   // uses .closest to remove 'closest li element'
@@ -88,6 +92,12 @@ const deleteTask = (e) => {
 
 };
 
+
+function setData(searchVal){
+  console.log('searchval', searchVal);
+  document.getElementById('to-do').value = searchVal;
+}
+
 // <========== Event Listeners ==========>
 document.addEventListener("DOMContentLoaded", () => {
   userTasks.forEach(task => {getTasksFromLocalStorage(task)})
@@ -97,8 +107,10 @@ submitBtn.addEventListener("click", (e) => {
   addTaskItem();
 });
 
-let existingCategory = document.querySelector('.existingcategory');
+// let existingCategory = document.querySelector('.existingcategory');
 
-existingCategory.addEventListener("click", (e) => {
-  addTaskItem(e === input.value);
-});
+
+// existingCategory.onclick {
+//   addTaskItem(e === input.value);
+// }
+// ;

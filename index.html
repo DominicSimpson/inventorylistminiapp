@@ -18,7 +18,7 @@
     <!--Task input area-->
     <section class="newcategory-input-section">
         <h1>Add to Inventory</h1>
-        <form class="form" id="newcategory-input">
+        <!-- <form class="form" id="newcategory-input"> -->
             <h2>Create a new category</h2>
             <input
                     class="form-input"
@@ -40,14 +40,14 @@
             <h2>Select existing category</h2>
 
             <div id="existingcategories">
-                <button class="existingcategory" id="existingcategory-one" value="drinks">Drinks</button>
-                <button class="existingcategory" id="existingcategory-two" value="food">Food</button>
-                <button class="existingcategory" id="existingcategory-three" value="clothing">Clothing</button>
-                <button class="existingcategory" id="existingcategory-four" value="customvalue">Custom value</button>
-                <button class="existingcategory" id="existingcategory-five" value="justaddedvalue">Just added value</button>
+                <button class="existingcategory" id="existingcategory-one" onclick="setData('drinks')">Drinks</button>
+                <button class="existingcategory" id="existingcategory-two" onclick="setData('food')">Food</button>
+                <button class="existingcategory" id="existingcategory-three" onclick="setData('clothing')">Clothing</button>
+                <button class="existingcategory" id="existingcategory-four" onclick="setData('customvalue')">Custom value</button>
+                <button class="existingcategory" id="existingcategory-five" onclick="setData('justaddvalue')">Just added value</button>
             </div>
             <button type="button" onclick="getDataFromApi()" id="submit-btn">Next</button>
-        </form>
+        <!-- </form> -->
 
     </section>
 </div>
