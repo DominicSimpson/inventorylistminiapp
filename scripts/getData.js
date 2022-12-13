@@ -18,12 +18,15 @@ function getDataFromApi() {
         };
         fetch(`https://api.flaticon.com/v3/search/icons/false?q=${searchVal}`, requestOptions)
             .then(response => response.json())
+
             .then(result =>{
-                result.data.map(res=>{
+                result.data.map(res => {
                     console.log('res',res);
-                    list.innerHTML += `<img src="${res.images[16]}"/>`+ '' + res.description;
+                    list.innerHTML += `<img src="${res.images[16]}"/>`;
                 });
             })
+        
+
             .catch(error => console.log('error', error));
 
 
