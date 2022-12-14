@@ -35,7 +35,7 @@ const getTasksFromLocalStorage = (task) => {
 function getData(category){
   console.log('category', category);
 
-     // existingCategories.document.createElement("li");
+    //  existingCategories.taskItem.createElement("li");
        existingCategories.innerHTML += `<span>${category}</span>`;
 }
 

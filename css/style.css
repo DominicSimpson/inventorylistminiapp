@@ -37,6 +37,7 @@ body {
   display:                    flex;
   flex-direction:             column;
   background-color:           #020435;
+  width: 400px;
 }
 
 .newcategory-input-section h1 {
@@ -127,7 +128,6 @@ input#to-do {
     min-width:                300px;
     font-family:              'Montserrat', sans-serif;
     height:                   30px;
-    border: 2px solid black;
   }
 
 @media all and (max-width: 500px) {
@@ -198,9 +198,11 @@ li span {
   flex-grow:                  1;
   overflow:                   auto;
 }
+
 li ~ li {
   margin-top:                 10px;
 }
+
 label {
   background-color:           #38e4ae;
 }
