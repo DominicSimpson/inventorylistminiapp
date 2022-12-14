@@ -122,17 +122,13 @@ input#to-do {
 
 #existingcategories {
     margin-bottom:            -120px;
-}
-
-.existingcategory{
     margin:                   7px 0 7px 7px;
     max-width:                100%;
     min-width:                300px;
-    text-align:               left;
     font-family:              'Montserrat', sans-serif;
     height:                   30px;
+    border: 2px solid black;
   }
-
 
 @media all and (max-width: 500px) {
   body {
