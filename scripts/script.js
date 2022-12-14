@@ -18,7 +18,7 @@ const getTasksFromLocalStorage = (task) => {
   taskItem.innerHTML = `
   <span>${task.category}</span>
   <button type="button" class="remove-task-btn"><i class="fa-solid fa-trash-can"></i></button>
-  <button type="button" class="back-btn"><i class="fa-solid fa-arrow-left"></i>Back</i></button>
+  <button type="button" class="back-btn" onclick ="getData('${task.category}')"><i class="fa-solid fa-arrow-left"></i>Back</i></button>
   `;
 
   list.appendChild(taskItem); // Add the <li> element from the storage to the DOM
@@ -30,6 +30,14 @@ const getTasksFromLocalStorage = (task) => {
   });
 }
 
+ let existingCategories = document.getElementById("existingcategories");
+
+function getData(category){
+  console.log('category', category);
+
+     // existingCategories.document.createElement("li");
+       existingCategories.innerHTML += `<span>${category}</span>`;
+}
 
 // <========== Function allows user to create a new category item  ==========> 
 const addTaskItem = () => {
@@ -45,7 +53,7 @@ const addTaskItem = () => {
   taskItem.innerHTML = ` 
   <span>${input.value}</span>
   <button type="button" class="remove-task-btn"><i class="fa-solid fa-trash-can"></i></button>
-  <button type="button" class="back-btn"><i class="fa-solid fa-arrow-left"></i>Back</i></button>
+  <button type="button" class="back-btn" onclick=="getData('${input.value}')"><i class="fa-solid fa-arrow-left"></i>Back</i></button>
   `;
 
 
@@ -92,17 +100,18 @@ const deleteTask = (e) => {
 
 // <========== Function allows user to add task to existing list  ==========> 
 
-// function backBtn() {
-//   let backBtn = taskItem.querySelector(".back-btn");
+//   const backBtn = document.querySelector(".back-btn");
 //   let existingCategories = document.getElementById("existingcategories");
 
-//   backBtn.onclick = () => {
+//   backBtn.addEventListener("click", (e) => {
+//     alert('cakked');
+//     e.preventDefault();
 //     existingCategories.document.createElement("li");
 //     existingCategories.innerHTML += `<span>${task.category}</span>`;
-//   }
-// }
+//   });
 
-// backBtn();
+
+// //backBtn();
 
 
 function setData(searchVal){
@@ -113,7 +122,9 @@ function setData(searchVal){
 
 // <========== Event Listeners ==========>
 document.addEventListener("DOMContentLoaded", () => {
-  userTasks.forEach(task => {getTasksFromLocalStorage(task)})
+  userTasks.forEach(task => {
+    getTasksFromLocalStorage(task)
+  })
 })
 
 submitBtn.addEventListener("click", (e) => {

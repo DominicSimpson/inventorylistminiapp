@@ -1,4 +1,5 @@
 function getDataFromApi() {
+    const list  = document.querySelector('.list');
     const searchVal = document.getElementById('to-do').value;
     let formdata = new FormData();
     formdata.append("apikey", "hK7QBmug4XezVHeQ7SZUD8DAAKboDNGvCQUheaOsGULFopXx");
@@ -6,6 +7,7 @@ function getDataFromApi() {
         method: 'POST',
         body: formdata,
     };
+
     fetch("https://api.flaticon.com/v3/app/authentication", requestOptions).then(function (res) {
         return res.json();
     }).then(function (data) {
