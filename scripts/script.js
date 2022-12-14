@@ -100,9 +100,19 @@ function setData(searchVal){
 document.addEventListener("DOMContentLoaded", () => {
   userTasks.forEach(task => {getTasksFromLocalStorage(task)})
 })
+
 submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
   addTaskItem();
 });
+
+let backBtn = document.querySelector(".back-btn");
+let existingCategories = document.getElementById("existingcategories");
+
+backBtn.onclick = () => {
+  existingCategories.document.createElement("li");
+  existingCategories.innerHTML += `<span>${task.category}</span>`;
+};
+
 
 
