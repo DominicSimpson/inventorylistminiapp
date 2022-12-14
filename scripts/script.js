@@ -48,6 +48,7 @@ const addTaskItem = () => {
   <button type="button" class="back-btn"><i class="fa-solid fa-arrow-left"></i>Back</i></button>
   `;
 
+
   // Add the <li> element from the storage to the DOM
   list.appendChild(taskItem);
 
@@ -89,6 +90,20 @@ const deleteTask = (e) => {
 
 };
 
+// <========== Function allows user to add task to existing list  ==========> 
+
+function backBtn() {
+  let backBtn = document.querySelector(".back-btn");
+  let existingCategories = document.getElementById("existingcategories");
+
+  backBtn.onclick = () => {
+    existingCategories.document.createElement("li");
+    existingCategories.innerHTML += `<span>${task.category}</span>`;
+  }
+}
+
+backBtn();
+
 
 function setData(searchVal){
   console.log('searchval', searchVal);
@@ -105,14 +120,3 @@ submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
   addTaskItem();
 });
-
-let backBtn = document.querySelector(".back-btn");
-let existingCategories = document.getElementById("existingcategories");
-
-backBtn.onclick = () => {
-  existingCategories.document.createElement("li");
-  existingCategories.innerHTML += `<span>${task.category}</span>`;
-};
-
-
-

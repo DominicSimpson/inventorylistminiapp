@@ -55,7 +55,7 @@ body {
 }
 
 #categorylogo {
-  display:                    inline-block;
+  float:                       right;  
   color:                       black;
   font-family:                 'Montserrat', sans-serif;
   font-size:                   1.25rem;
@@ -81,8 +81,8 @@ input#to-do {
 #submit-btn {
   border-radius:              5px;
   border:                     none;
-  height:                     2rem;
-  padding:                    5px;
+  height:                     3rem;
+  padding:                    10px;
   cursor:                     pointer;
   background-color:           rgb(18, 179, 237);
   margin-top:                 150px;
@@ -225,8 +225,6 @@ label {
   aspect-ratio:               1;
   border:                     2px solid black;
 }
-
-
 
 .fa-solid {
   background-color:           transparent;
