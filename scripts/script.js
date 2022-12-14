@@ -98,6 +98,9 @@ function setData(searchVal){
   document.getElementById('to-do').value = searchVal;
 }
 
+
+
+
 // <========== Event Listeners ==========>
 document.addEventListener("DOMContentLoaded", () => {
   userTasks.forEach(task => {getTasksFromLocalStorage(task)})
