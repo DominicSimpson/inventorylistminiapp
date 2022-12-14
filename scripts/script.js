@@ -18,6 +18,7 @@ const getTasksFromLocalStorage = (task) => {
   taskItem.innerHTML = `
   <span>${task.category}</span>
   <button type="button" class="remove-task-btn"><i class="fa-solid fa-trash-can"></i></button>
+  <button type="button" class="back-btn"><i class="fa-solid fa-arrow-left"></i>Back</i></button>
   `;
 
   list.appendChild(taskItem); // Add the <li> element from the storage to the DOM
@@ -44,6 +45,7 @@ const addTaskItem = () => {
   taskItem.innerHTML = ` 
   <span>${input.value}</span>
   <button type="button" class="remove-task-btn"><i class="fa-solid fa-trash-can"></i></button>
+  <button type="button" class="back-btn"><i class="fa-solid fa-arrow-left"></i>Back</i></button>
   `;
 
   // Add the <li> element from the storage to the DOM
