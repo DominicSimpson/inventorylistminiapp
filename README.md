@@ -15,4 +15,4 @@
         fetch(`https://api.flaticon.com/v3/search/icons/false?q=${searchVal}`, requestOptions)
 ```
 
-
+###### The second fetch then takes the resulting data and uses a map method to iterate through every icon that the API has that corresponds to the input. This is then appended onto the DOM via `list.innerHTML += `<img src="${res.images[16]}"/>`;`. The 16 refers to the code for images.
