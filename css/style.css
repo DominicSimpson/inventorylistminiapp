@@ -216,6 +216,18 @@ label {
   cursor:                     pointer;
   aspect-ratio:               1;
 }
+
+.back-btn {
+  display:                    inline-block;
+  background-color:           #FFF;
+  border:                     none;
+  cursor:                     pointer;
+  aspect-ratio:               1;
+  border:                     2px solid black;
+}
+
+
+
 .fa-solid {
   background-color:           transparent;
   font-size:                  1.2rem;

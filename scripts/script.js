@@ -73,10 +73,6 @@ const addTaskItem = () => {
 };
 
 
-
-
-
-
 // <========== Function allows user to delete a new task  ==========> 
 const deleteTask = (e) => {
   // uses .closest to remove 'closest li element'
@@ -101,8 +97,6 @@ function setData(searchVal){
 }
 
 
-
-
 // <========== Event Listeners ==========>
 document.addEventListener("DOMContentLoaded", () => {
   userTasks.forEach(task => {getTasksFromLocalStorage(task)})
@@ -112,10 +106,4 @@ submitBtn.addEventListener("click", (e) => {
   addTaskItem();
 });
 
-// let existingCategory = document.querySelector('.existingcategory');
 
-
-// existingCategory.onclick {
-//   addTaskItem(e === input.value);
-// }
-// ;
