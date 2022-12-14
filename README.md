@@ -15,7 +15,7 @@ const searchVal = document.getElementById('to-do').value;
 fetch(`https://api.flaticon.com/v3/search/icons/false?q=${searchVal}`, requestOptions)
 ```
 
-###### The second fetch then takes the resulting data and uses a map method to iterate through every icon that the API has that corresponds to the input. This is then appended onto the DOM via `list.innerHTML +=, followed by displaying the appropriate icon with `<img src="${res.images[the number sixteen]}"/>`. The 16 refers to the code for images.
+###### The second fetch then takes the resulting data and uses a map method to iterate through every icon that the API has that corresponds to the input. This is then appended onto the DOM via `list.innerHTML +=, followed by displaying the appropriate icon and including the number 16, which refers to the code for images. At this point, the output showed every icon for each category, so typing in 'Drinks', for example, would show every icon that the API associates with that keyword. Triggering the `deleteTask()` function inside the `.then` promise limited the icons to only one. 
 
 ###### For the trash can/dustbin and back icons, I used FontAwesome, while I utilised Montserrat for the font, to approximate the original mock-up.
 
