@@ -93,7 +93,7 @@ const deleteTask = (e) => {
 // <========== Function allows user to add task to existing list  ==========> 
 
 // function backBtn() {
-//   let backBtn = document.querySelector(".back-btn");
+//   let backBtn = taskItem.querySelector(".back-btn");
 //   let existingCategories = document.getElementById("existingcategories");
 
 //   backBtn.onclick = () => {
