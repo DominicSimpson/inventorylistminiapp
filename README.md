@@ -6,13 +6,13 @@
 ###### I then utilised the fetch request method twice - first to request authentification of the API Key, and secondly to search for icons. The API icons are tied to the input bar in the HTML via a variable called `searchVal`:
 
 ```js
-    const searchVal = document.getElementById('to-do').value;
+const searchVal = document.getElementById('to-do').value;
 ```
 
 ###### The second fetch request then featured this as a search parameter within the API URL for icons:
 
 ```js
-        fetch(`https://api.flaticon.com/v3/search/icons/false?q=${searchVal}`, requestOptions)
+fetch(`https://api.flaticon.com/v3/search/icons/false?q=${searchVal}`, requestOptions)
 ```
 
 ###### The second fetch then takes the resulting data and uses a map method to iterate through every icon that the API has that corresponds to the input. This is then appended onto the DOM via `list.innerHTML += `<img src="${res.images[the number sixteen]}"/>`;`. The 16 refers to the code for images.
