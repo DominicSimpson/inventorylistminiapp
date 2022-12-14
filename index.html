@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+          integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"/>
+    <title>Category List Mini-App</title>
+</head>
+<body>
+<div class="wrapper">
+    <!--Task input area-->
+    <section class="newcategory-input-section">
+        <h1>Add to Inventory</h1>
+        <!-- <form class="form" id="newcategory-input"> -->
+            <h2>Create a new category</h2>
+            <input
+                    class="form-input"
+                    required
+                    aria-label="Enter task"
+                    type="text"
+                    id="to-do"
+                    name="to-do"
+                    placeholder="e.g. Merch"
+            />
+
+            <div class="to-do-list" id="main">
+                <div class="todo-container">
+                    <ul class="list" id="categorylogo">Category Logo</ul>
+                </div>
+            </div>
+
+            <h2>Select existing category</h2>
+
+            <div id="existingcategories">
+            </div>
+            
+            <button type="button" onclick="getDataFromApi()" id="submit-btn">Next</button>
+        <!-- </form> -->
+
+    </section>
+</div>
+
+<script src="scripts/script.js"></script>
+<script src="scripts/getData.js"></script>
+
+</body>
+</html>
