@@ -40,26 +40,26 @@ body {
 }
 
 .newcategory-input-section h1 {
-    color:                     white;
-    margin-left:               15px;
-    font-family:               'Montserrat', sans-serif;
-    font-size:                 1.25rem;
-    text-align:                left;
+    color:                    white;
+    margin-left:              15px;
+    font-family:              'Montserrat', sans-serif;
+    font-size:                1.25rem;
+    text-align:               left;
 }
 
 .newcategory-input-section h2 {
-  color:                       black;
-  margin-left:                 7px;
-  font-family:                 'Montserrat', sans-serif;
-  font-size:                   1.25rem;
+  color:                      black;
+  margin-left:                7px;
+  font-family:                'Montserrat', sans-serif;
+  font-size:                  1.25rem;
 }
 
 #categorylogo {
-  float:                       right;  
-  color:                       black;
-  font-family:                 'Montserrat', sans-serif;
-  font-size:                   1.25rem;
-  font-weight:                 bold;
+  float:                      right;  
+  color:                      black;
+  font-family:                'Montserrat', sans-serif;
+  font-size:                  1.25rem;
+  font-weight:                bold;
 }
 
 #to-do-input {
@@ -236,11 +236,11 @@ label {
 }
 
 img {
-  border: 5px solid black;
-  padding: 25px;
-  max-width: 100%;
-  height: auto;
-  background-color: yellow;
-  display:                    inline-block;
+  border:                     5px solid black;
+  padding:                    25px;
+  max-width:                  100%;
+  height:                     auto;
+  background-color:           yellow;
+  float:                      left;
 }
 
