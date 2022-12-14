@@ -51,10 +51,9 @@ const addTaskItem = () => {
   // Add the <li> element from the storage to the DOM
   list.appendChild(taskItem);
 
-  // Create an object made up of the: 1) category's description; 2) category's Boolean status; 3) category's ID
+  // Create an object made up of the: 1) category's description; 2) category's ID
   const newTask = {
     category: input.value,
-    // completed: false,
     id: taskNum,
   }
 
