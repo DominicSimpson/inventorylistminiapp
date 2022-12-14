@@ -23,4 +23,5 @@ fetch(`https://api.flaticon.com/v3/search/icons/false?q=${searchVal}`, requestOp
 - `getTasksFromLocalStorage()`
 - `addTaskItem()`
 - `deleteTask()`
+###### The `addTaskItem` sets the inputted categories in Local Storage. A global array called `userTasks` is created that gets the inputted categories from Local Storage. This is utilised in the `getTasksFromLocalStorage()` function to update the DOM.  
     
