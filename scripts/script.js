@@ -37,9 +37,21 @@ function getData(category){
   console.log('category', category);
 
        existingCategories.innerHTML += `<li>${category}</li>`;
-  
+
+//        const backBtn = document.querySelector(".back-btn");
+
+//        backBtn.addEventListener("click", function (){
+
+//        var x = document.getElementById("toggle");
+//       if (x.style.display === "none") {
+//       x.style.display = "block";
+//       } else {
+//       x.style.display = "none";
+//     }
+// });
 }
 
+  
 
 // <========== Function allows user to create a new category item  ==========> 
 const addTaskItem = () => {
