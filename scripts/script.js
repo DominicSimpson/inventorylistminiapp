@@ -40,16 +40,16 @@ function getData(category){
        existingCategories.innerHTML += `<li>${category}</li>`;
 
 
-  //     let backButton = document.querySelector(".back-btn");
+      let backButton = document.querySelector(".back-btn");
 
-  //     backButton.addEventListener("click", function (){
-  //     var x = document.getElementById("existingcategories" + "li");
-  //     if (x.style.display === "none") {
-  //       x.style.display = "block";
-  //     } else {
-  //     x.style.display = "none";
-  //     }
-  // });
+      backButton.addEventListener("click", function (){
+      var x = document.querySelector(".toggle");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+      x.style.display = "none";
+      }
+  });
 }
 
 
