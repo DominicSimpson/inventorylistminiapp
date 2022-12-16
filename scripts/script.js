@@ -36,7 +36,7 @@ function getData(category){
   console.log('category', category);
 
     //  existingCategories.taskItem.createElement("li");
-       existingCategories.innerHTML += `<span>${category}</span>`;
+       existingCategories.innerHTML += `<li>${category}</li>`;
 }
 
 // <========== Function allows user to create a new category item  ==========> 

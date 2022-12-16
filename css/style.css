@@ -128,6 +128,7 @@ input#to-do {
     min-width:                300px;
     font-family:              'Montserrat', sans-serif;
     height:                   30px;
+    display:                  block;
   }
 
 @media all and (max-width: 500px) {
