@@ -134,7 +134,7 @@ input#to-do {
   #existingcategories li  {
     border:                   2px solid black;
     width:                    250px;
-    /* display: none;   */
+    /* display:                  none;   */
   }
 
 @media all and (max-width: 500px) {
