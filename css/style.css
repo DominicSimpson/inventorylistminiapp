@@ -131,6 +131,11 @@ input#to-do {
     text-transform:           capitalize;
   }
 
+  #existingcategories li {
+    border:                   2px solid black;
+    width:                    250px;  
+  }
+
 @media all and (max-width: 500px) {
   body {
     padding:                  0;
