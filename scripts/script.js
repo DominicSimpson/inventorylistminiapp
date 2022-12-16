@@ -32,12 +32,26 @@ const getTasksFromLocalStorage = (task) => {
 
  let existingCategories = document.getElementById("existingcategories");
 
+
+
 function getData(category){
   console.log('category', category);
 
-    //  existingCategories.taskItem.createElement("li");
        existingCategories.innerHTML += `<li>${category}</li>`;
+
+
+  //     let backButton = document.querySelector(".back-btn");
+
+  //     backButton.addEventListener("click", function (){
+  //     var x = document.getElementById("existingcategories" + "li");
+  //     if (x.style.display === "none") {
+  //       x.style.display = "block";
+  //     } else {
+  //     x.style.display = "none";
+  //     }
+  // });
 }
+
 
 // <========== Function allows user to create a new category item  ==========> 
 const addTaskItem = () => {
