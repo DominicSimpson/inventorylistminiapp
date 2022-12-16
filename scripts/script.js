@@ -42,7 +42,7 @@ function getData(category){
 
 //        backBtn.addEventListener("click", function (){
 
-//        var x = document.getElementById("toggle");
+//        var x = document.getElementById("existingcategories" + "li");
 //       if (x.style.display === "none") {
 //       x.style.display = "block";
 //       } else {
