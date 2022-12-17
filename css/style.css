@@ -131,10 +131,8 @@ input#to-do {
     text-transform:           capitalize;
   }
 
-  #existingcategories li  {
-    border:                   2px solid black;
-    width:                    250px;
-    /* display:                  none;   */
+  li.toggle   {
+    display:                  none;  
   }
 
 @media all and (max-width: 500px) {
@@ -207,6 +205,10 @@ li span {
 
 li ~ li {
   margin-top:                 10px;
+  border:                     2px solid black;
+  width:                      275px;
+  font-family:                'Montserrat', sans-serif;
+
 }
 
 label {

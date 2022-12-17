@@ -30,26 +30,27 @@ const getTasksFromLocalStorage = (task) => {
   });
 }
 
- let existingCategories = document.getElementById("existingcategories");
+//  let existingCategories = document.getElementById("existingcategories");
  
 
 function getData(category){
   console.log('category', category);
 
+  let existingCategories = document.getElementById("existingcategories");
+
+
        existingCategories.innerHTML += `<li>${category}</li>`;
 
-//        const backBtn = document.querySelector(".back-btn");
+        const children = document.querySelectorAll('.toggle');
 
-//        backBtn.addEventListener("click", function (){
+        console.log(children);
 
-//        var x = document.getElementById("existingcategories" + "li");
-//       if (x.style.display === "none") {
-//       x.style.display = "block";
-//       } else {
-//       x.style.display = "none";
-//     }
-// });
+
+      if (children.style.display === "none") {
+      children.style.display = "block";
+      }   
 }
+
 
   
 
