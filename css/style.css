@@ -132,7 +132,10 @@ input#to-do {
   }
 
   li.toggle   {
-    display:                  none;  
+    display:                    none;  
+    border:                     2px solid black;
+    width:                      275px;
+    font-family:                'Montserrat', sans-serif;
   }
 
 @media all and (max-width: 500px) {
@@ -205,10 +208,6 @@ li span {
 
 li ~ li {
   margin-top:                 10px;
-  border:                     2px solid black;
-  width:                      275px;
-  font-family:                'Montserrat', sans-serif;
-
 }
 
 label {

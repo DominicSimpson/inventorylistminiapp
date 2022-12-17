@@ -41,7 +41,7 @@ function getData(category){
 
        existingCategories.innerHTML += `<li>${category}</li>`;
 
-        const children = document.querySelectorAll('.toggle');
+        let children = document.querySelectorAll('.toggle');
 
         console.log(children);
 
